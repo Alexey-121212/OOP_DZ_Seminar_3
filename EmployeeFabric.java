@@ -2,7 +2,9 @@ import java.util.Random;
 
 public class EmployeeFabric {
 
-    private static Random random = new Random();
+    private static Random randomSalary = new Random();
+    private static Random randomType = new Random();
+    private static Random randomAge = new Random();
 
     public static Employee generatEmployee() {
         String[] names = new String[] { "Анатолий", "Глеб", "Клим", "Мартин", "Лазарь", "Владлен", "Клим", "Панкратий",
@@ -10,21 +12,22 @@ public class EmployeeFabric {
         String[] surnames = new String[] { "Григорьев", "Фокин", "Шестаков", "Хохлов", "Шубин", "Бирюков", "Копылов",
                 "Горбунов", "Лыткин", "Соколов" };
 
-        int salary = random.nextInt(60000, 120001);
+        int salary = randomSalary.nextInt(60000, 120001);
 
-        Random randomType = new Random();
+        int age = randomAge.nextInt(18, 66);
+
         int employeeType = randomType.nextInt(1, 3);
 
         if (employeeType == 1) {
             return Worker.create(
-                    surnames[random.nextInt(surnames.length)],
-                    names[random.nextInt(names.length)],
-                    salary);
+                    surnames[randomSalary.nextInt(surnames.length)],
+                    names[randomSalary.nextInt(names.length)],
+                    salary, age);
         } else {
             return Freelancer.create(
-                    surnames[random.nextInt(surnames.length)],
-                    names[random.nextInt(names.length)],
-                    (salary / 20.8 / 8));
+                    surnames[randomSalary.nextInt(surnames.length)],
+                    names[randomSalary.nextInt(names.length)],
+                    (salary / 20.8 / 8), age);
         }
     }
 

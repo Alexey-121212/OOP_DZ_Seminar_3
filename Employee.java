@@ -3,7 +3,7 @@ public abstract class Employee implements Comparable<Employee> {
     @Override
     public int compareTo(Employee o) {
         int surNameRes = surName.compareTo(o.surName);
-        if (surNameRes == 0){
+        if (surNameRes == 0) {
             return name.compareTo(o.name);
         }
         return surNameRes;
@@ -19,21 +19,27 @@ public abstract class Employee implements Comparable<Employee> {
      */
     protected String surName;
 
-
     /**
      * Ставка заработной платы
      */
     protected double salary;
 
     /**
+     * Возраст
+     */
+    protected int age;
+
+    /**
      * Расчет среднемесячной заработной платы
+     * 
      * @return заработная плата в месяц
      */
     public abstract double calculateSalary();
 
-    public Employee(String surName, String name, double salary) {
+    public Employee(String surName, String name, double salary, int age) {
         this.surName = surName;
         this.name = name;
         this.salary = salary;
+        this.age = age;
     }
 }
