@@ -4,19 +4,19 @@ public class Program {
 
     public static void main(String[] args) {
 
-        Worker[] workers = EmployeeFabric.generateEmployees(15);
-        for (Worker worker : workers) {
-            System.out.println(worker);
+        Employee[] employees = EmployeeFabric.generateEmployees(15);
+        for (Employee employee : employees) {
+            System.out.println(employee);
         }
 
         System.out.println();
         System.out.println("***");
         System.out.println();
 
-        Arrays.sort(workers);
+        Arrays.sort(employees);
 
-        for (Worker worker : workers) {
-            System.out.println(worker);
+        for (Employee employee : employees) {
+            System.out.println(employee);
         }
     }
 
