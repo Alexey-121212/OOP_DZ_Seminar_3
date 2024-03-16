@@ -38,7 +38,7 @@ public class EmployeeFabric {
     public static Employee[] generateEmployees(int count) {
         Employee[] employees = new Worker[count];
         for (int i = 0; i < count; i++) {
-            employees[i] = generateWorker();
+            employees[i] = generatEmployee();
         }
         return employees;
     }
