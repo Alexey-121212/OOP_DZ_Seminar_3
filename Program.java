@@ -10,10 +10,10 @@ public class Program {
         }
 
         System.out.println();
-        System.out.println("***");
+        System.out.println("Список работников и фрилансеров, отсортированных по убыванию возраста");
         System.out.println();
 
-        Arrays.sort(employees);
+        Arrays.sort(employees, new AgeComparator());
 
         for (Employee employee : employees) {
             System.out.println(employee);
